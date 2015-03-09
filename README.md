@@ -1,8 +1,9 @@
-# soccer-league-table
-Reference implementation of AngularJS + ASP.NET Web API, and ASP.NET MVC
+# Soccer League Table
+Reference implementation of AngularJS + ASP.NET Web API
 
-Enable-Migrations -ProjectName Repository -StartUpProjectName Repository -ConnectionString "Server=.\sqlexpress;Database=SoccerLeague;Integrated Security=true" -ConnectionProviderName System.Data.SqlClient
+Startup Projects:
+- AngularClient
+- WebApi
 
-Add-Migration -Name Initial -ProjectName Repository -StartUpProjectName Repository -ConnectionString "Server=.\sqlexpress;Database=SoccerLeague;Integrated Security=true" -ConnectionProviderName System.Data.SqlClient
+Highlights: The methods in the Domain classes are entirely without side-effects ("pure" in a functional sense). Therefore business logic is able to be unit-tested without necessitating the use of Dependency Injection and mocking.
 
-Update-Database -ProjectName Repository -StartUpProjectName Repository -ConnectionString "Server=.\sqlexpress;Database=SoccerLeague;Integrated Security=true" -ConnectionProviderName System.Data.SqlClient -Verbose
