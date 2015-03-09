@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="FixtureRepository.cs" />
     <Compile Include="Migrations\201503090747141_Initial.cs" />
     <Compile Include="Migrations\201503090747141_Initial.Designer.cs">
