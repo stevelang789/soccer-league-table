@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SteveLang.SoccerLeagueTable.Model;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SteveLang.SoccerLeagueTable.Model;
 
 namespace SteveLang.SoccerLeagueTable.Domain.UnitTests
 {

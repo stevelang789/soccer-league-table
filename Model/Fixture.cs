@@ -13,9 +13,20 @@ namespace SteveLang.SoccerLeagueTable.Model
         public int HomeTeamScore { get; set; }
         public int AwayTeamScore { get; set; }
 
+        public void SetScores(int homeTeamScore, int awayTeamScore)
+        {
+            IsCompleted = true;
+            HomeTeamScore = homeTeamScore;
+            AwayTeamScore = awayTeamScore;
+        }
+
         public override string ToString()
         {
-            return Date.ToString("yyyy-MM-dd") + ": " + HomeTeam.Name + " vs " + AwayTeam.Name;
+            return string.Format(
+                "{0}: {1} vs {2}",
+                Date.ToString("yyyy-MM-dd"),
+                HomeTeam.Name,
+                AwayTeam.Name);
         }
     }
 }

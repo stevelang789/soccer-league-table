@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace SteveLang.SoccerLeagueTable.Model
 {
     public class LeagueTableRow
@@ -17,5 +12,20 @@ namespace SteveLang.SoccerLeagueTable.Model
         public int GoalsAgainst { get; set; }
         public int GoalDifference { get; set; }
         public int Points { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format(
+                "{0,-15} {1,3} {2,3} {3,3} {4,3} {5,3} {6,3} {7,3} {8,3}",
+                TeamName,
+                Played,
+                Won,
+                Drew,
+                Lost,
+                GoalsFor,
+                GoalsAgainst,
+                GoalDifference,
+                Points);
+        }
     }
 }
