@@ -31,6 +31,7 @@ namespace SteveLang.SoccerLeagueTable.WebApi.Controllers
         // POST api/standingsandfixtures
         public ICollection<LeagueTableRow> Post([FromBody] ICollection<Fixture> fixtures)
         {
+            _leagueTableService.UpdateFixtures(fixtures);
             var standings = _leagueTableService.CalculateStandings(fixtures);
 
             return standings;

@@ -16,7 +16,23 @@
             return q.promise;
         };
 
+        var updateFixtures = function (data) {
+            var q = $q.defer();
+
+            $http.post(serviceUrl + '/api/StandingsAndFixtures', data)
+                .then(function (response) {
+                    q.resolve(response.data);
+                })
+                .catch(function (response) {
+                    uxService.handleError(response.data);
+                    q.reject();
+                });
+
+            return q.promise;
+        };
+
         return {
-            getStandingsAndFixtures: getStandingsAndFixtures
+            getStandingsAndFixtures: getStandingsAndFixtures,
+            updateFixtures: updateFixtures
         }
     }]);

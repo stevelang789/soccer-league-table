@@ -26,9 +26,17 @@
 </head>
 <body ng-controller="standingsAndFixturesController">
     <div class="container">
-        <h2>Soccer League Table</h2>
+        <h2>Melbourne Fictional Charity Shield</h2>
+        <h4>Reference implementation of AngularJS + ASP.NET Web API</h4>
+        <p>GitHub Repo: <a href="https://github.com/stevelang789/soccer-league-table">https://github.com/stevelang789/soccer-league-table</a></p>
+        <h3>Standings</h3>
         <div class="gridStyle" ng-grid="standingsOptions" style="width: 750px; height: 154px">
         </div>
+        <h3>Fixtures</h3>
+        <p>Click on <strong>Played</strong>, <strong>H. Score</strong> and <strong>A. Score</strong> cells to edit, and click <strong>Save</strong> when done.</p>
+        <div class="gridStyle" ng-grid="fixturesOptions" style="width: 750px; height: 394px; margin-bottom: 15px">
+        </div>
+        <input type="button" value="Save" ng-click="save()" />
     </div>
 </body>
 </html>
