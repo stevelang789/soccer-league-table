@@ -34,11 +34,8 @@ namespace SteveLang.SoccerLeagueTable.Repository.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         Name = c.String(),
-                        League_Id = c.Guid(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Leagues", t => t.League_Id)
-                .Index(t => t.League_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Leagues",
@@ -50,18 +47,35 @@ namespace SteveLang.SoccerLeagueTable.Repository.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.LeagueTeams",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        League_Id = c.Guid(),
+                        Team_Id = c.Guid(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Leagues", t => t.League_Id)
+                .ForeignKey("dbo.Teams", t => t.Team_Id)
+                .Index(t => t.League_Id)
+                .Index(t => t.Team_Id);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.LeagueTeams", "Team_Id", "dbo.Teams");
+            DropForeignKey("dbo.LeagueTeams", "League_Id", "dbo.Leagues");
             DropForeignKey("dbo.Fixtures", "League_Id", "dbo.Leagues");
             DropForeignKey("dbo.Fixtures", "HomeTeam_Id", "dbo.Teams");
             DropForeignKey("dbo.Fixtures", "AwayTeam_Id", "dbo.Teams");
-            DropForeignKey("dbo.Teams", "League_Id", "dbo.Leagues");
-            DropIndex("dbo.Teams", new[] { "League_Id" });
+            DropIndex("dbo.LeagueTeams", new[] { "Team_Id" });
+            DropIndex("dbo.LeagueTeams", new[] { "League_Id" });
             DropIndex("dbo.Fixtures", new[] { "League_Id" });
             DropIndex("dbo.Fixtures", new[] { "HomeTeam_Id" });
             DropIndex("dbo.Fixtures", new[] { "AwayTeam_Id" });
+            DropTable("dbo.LeagueTeams");
             DropTable("dbo.Leagues");
             DropTable("dbo.Teams");
             DropTable("dbo.Fixtures");

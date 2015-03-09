@@ -24,8 +24,12 @@ namespace SteveLang.SoccerLeagueTable.Repository.Migrations
             context.Leagues.Add(league);
             context.SaveChanges();
 
-            var teams = CreateTeams(league);
+            var teams = CreateTeams();
             teams.ToList().ForEach(team => context.Teams.Add(team));
+            context.SaveChanges();
+
+            var leagueTeams = CreateLeagueTeams(league, teams);
+            leagueTeams.ToList().ForEach(lt => context.LeagueTeams.Add(lt));
             context.SaveChanges();
 
             var fixtures = CreateFixtures(league, teams, startDate, intervalInDays);
@@ -39,43 +43,57 @@ namespace SteveLang.SoccerLeagueTable.Repository.Migrations
             {
                 Id = Guid.NewGuid(),
                 Name = "Melbourne Fictional Charity Shield",
-                Season = "2015"
+                Season = "2014/2015"
             };
 
             return league;
         }
 
-        private static ICollection<Team> CreateTeams(League league)
+        private static ICollection<Team> CreateTeams()
         {
-            var teams = new List<Team>
+            var teams = new Team[]
             {
                 new Team
                 {
                     Id = Guid.NewGuid(),
-                    League = league,
                     Name = "Hume SC"
                 },
                 new Team
                 {
                     Id = Guid.NewGuid(),
-                    League = league,
                     Name = "Manningham SC"
                 },
                 new Team
                 {
                     Id = Guid.NewGuid(),
-                    League = league,
                     Name = "Dandenong SC"
                 },
                 new Team
                 {
                     Id = Guid.NewGuid(),
-                    League = league,
                     Name = "Melton SC"
                 }
             };
 
             return teams;
+        }
+
+        private static ICollection<LeagueTeam> CreateLeagueTeams(League league, ICollection<Team> teams)
+        {
+            var leagueTeams = new List<LeagueTeam>();
+
+            foreach (var team in teams)
+            {
+                var leagueTeam = new LeagueTeam
+                {
+                    Id = Guid.NewGuid(),
+                    League = league,
+                    Team = team
+                };
+                leagueTeams.Add(leagueTeam);
+            }
+
+            return leagueTeams;
         }
 
         private static ICollection<Fixture> CreateFixtures(

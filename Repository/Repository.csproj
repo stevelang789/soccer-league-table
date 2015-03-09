@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FixtureRepository.cs" />
-    <Compile Include="Migrations\201503090747141_Initial.cs" />
-    <Compile Include="Migrations\201503090747141_Initial.Designer.cs">
-      <DependentUpon>201503090747141_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201503090829312_Initial.cs" />
+    <Compile Include="Migrations\201503090829312_Initial.Designer.cs">
+      <DependentUpon>201503090829312_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503090747141_Initial.resx">
-      <DependentUpon>201503090747141_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503090829312_Initial.resx">
+      <DependentUpon>201503090829312_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

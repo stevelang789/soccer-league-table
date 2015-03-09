@@ -13,7 +13,7 @@ namespace SteveLang.SoccerLeagueTable.Repository.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201503090747141_Initial"; }
+            get { return "201503090829312_Initial"; }
         }
         
         string IMigrationMetadata.Source

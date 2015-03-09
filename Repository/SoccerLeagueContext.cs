@@ -11,6 +11,7 @@ namespace SteveLang.SoccerLeagueTable.Repository
 
         public DbSet<League> Leagues { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<LeagueTeam> LeagueTeams { get; set; }
         public DbSet<Fixture> Fixtures { get; set; }
     }
 }
