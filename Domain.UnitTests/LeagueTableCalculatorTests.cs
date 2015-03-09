@@ -10,7 +10,7 @@ namespace SteveLang.SoccerLeagueTable.Domain.UnitTests
     public class LeagueTableCalculatorTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void LeagueTableRowsCorrectlyCalculatedFor4Teams()
         {
             // Arrange
             var league = new League { Id = Guid.NewGuid(), Name = "Test League" };
