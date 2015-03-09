@@ -10,7 +10,7 @@ namespace SteveLang.SoccerLeagueTable.Domain.UnitTests
     public class LeagueTableCalculatorTests
     {
         [TestMethod]
-        public void LeagueTableRowsCorrectlyCalculatedFor4Teams()
+        public void StandingsCorrectlyCalculatedFor4Teams()
         {
             // Arrange
             var league = new League { Id = Guid.NewGuid(), Name = "Test League" };
@@ -35,7 +35,7 @@ namespace SteveLang.SoccerLeagueTable.Domain.UnitTests
 
             // Act
             var leagueTableCalculator = new LeagueTableCalculator();
-            var leagueTableRows = leagueTableCalculator.Calculate(teams, fixtures);
+            var leagueTableRows = leagueTableCalculator.CalculateStandings(teams, fixtures);
 
             leagueTableRows.ToList().ForEach(row => Trace.WriteLine(row));
         }

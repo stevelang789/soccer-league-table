@@ -13,7 +13,7 @@ namespace SteveLang.SoccerLeagueTable.Domain
         public static readonly int PointsForDraw = 1;
         public static readonly int PointsForLoss = 0;
 
-        public ICollection<LeagueTableRow> Calculate(ICollection<Team> teams, ICollection<Fixture> fixtures)
+        public ICollection<LeagueTableRow> CalculateStandings(ICollection<Team> teams, ICollection<Fixture> fixtures)
         {
             var unorderedRows = new List<LeagueTableRow>();
 
