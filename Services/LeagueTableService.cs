@@ -20,9 +20,13 @@ namespace SteveLang.SoccerLeagueTable.Services
             return _fixtureRepository.GetFixtures();
         }
 
-        public ICollection<LeagueTableRow> UpdateFixturesAndCalculateStandings(ICollection<Fixture> fixtures)
+        public void UpdateFixtures(ICollection<Fixture> fixtures)
         {
             _fixtureRepository.UpdateFixtures(fixtures);
+        }
+
+        public ICollection<LeagueTableRow> CalculateStandings(ICollection<Fixture> fixtures)
+        {
             var teams = _teamRepository.GetTeams();
             var standings = _leagueTableCalculator.CalculateStandings(teams, fixtures);
 

@@ -13,7 +13,12 @@ namespace SteveLang.SoccerLeagueTable.Repository
         {
             using (var context = new SoccerLeagueContext())
             {
-                return context.Fixtures.ToArray();
+                context.Configuration.LazyLoadingEnabled = false;
+
+                return context.Fixtures
+                    .Include("HomeTeam")
+                    .Include("AwayTeam")
+                    .ToArray();
             }
         }
 

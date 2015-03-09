@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTests", "Domain.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{31278463-3547-4CFB-9FFD-04FCDC3DF112}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "SteveLang.SoccerLeagueTable.WebApi\WebApi.csproj", "{22E8DF3F-8E31-4C7D-AF8F-44048E11F4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularClient", "AngularClient\AngularClient.csproj", "{F3B81397-35A2-448E-99B6-BAA79B8C6900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{31278463-3547-4CFB-9FFD-04FCDC3DF112}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31278463-3547-4CFB-9FFD-04FCDC3DF112}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31278463-3547-4CFB-9FFD-04FCDC3DF112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E8DF3F-8E31-4C7D-AF8F-44048E11F4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E8DF3F-8E31-4C7D-AF8F-44048E11F4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E8DF3F-8E31-4C7D-AF8F-44048E11F4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E8DF3F-8E31-4C7D-AF8F-44048E11F4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B81397-35A2-448E-99B6-BAA79B8C6900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B81397-35A2-448E-99B6-BAA79B8C6900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B81397-35A2-448E-99B6-BAA79B8C6900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B81397-35A2-448E-99B6-BAA79B8C6900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
